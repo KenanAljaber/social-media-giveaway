@@ -1,0 +1,20 @@
+<div class="main">
+    <div class="search-widget">
+        <input type="text" [(ngModel)]="postURL">
+        <button (click)="searchPost()">Search post</button>
+        {{postURL | json}}
+        {{resp | json}}
+    </div>
+
+    <div class="comments" *ngIf="comments && comments.length>0">
+        <div class="comment" *ngFor="let comment of comments">
+            <div class="comment-row">
+                <div class="user">
+                    <img [src]="comment.userPic">
+                    <h4>{{comment.userName}}</h4>
+                </div>
+                <h3>{{comment.text}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

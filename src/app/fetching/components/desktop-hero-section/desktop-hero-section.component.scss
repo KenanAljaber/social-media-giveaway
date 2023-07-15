@@ -1,0 +1,97 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    // width: 100%;
+    // height: 100%;
+    overflow-x: hidden;
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(32,22,97,1) 0%, rgba(2,2,59,1) 35%, rgba(88, 28, 99, 0.696) 100%);
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fade-in 1s ease-out forwards; /* Apply fade-in animation */
+  
+    .right{
+        margin-top: 5%;
+        margin-left: 4%;
+        margin-right: 3%;
+        width: 100%;
+        color: white;
+        ul{
+            width:75%;
+            li{
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin: 15px;
+            }
+        }
+        
+    
+    }
+    .left{
+        margin-top: 6%;
+        margin-left: 5%;
+        margin-right: 3%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .text{
+          
+            width: 100%;
+            // text-align: center;
+            color: white;
+            .big-title{
+                font-size: 4rem;
+                width: 600px;
+                // text-align: center;
+                // margin: 0 auto;
+                margin-bottom: 0;
+                strong{
+                    color: var(--accent-color);
+                }
+            }
+            p{
+                margin: 0;
+                font-weight: 200;
+            }
+        }
+    
+        .download{
+            width: 100%;
+            text-align: center;
+            margin-top: 25px;
+            img{
+                width: 200px;
+                transition: 0.5s;
+                margin-bottom: 0;
+            }
+            img:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+            h4{
+                margin:0;
+                color:  white;
+                font-weight: 300;
+                transition: 0.5s;
+            }
+            h4:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+                font-weight: 700;
+            }
+        }
+    }
+
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-200px); /* Start position below the bottom */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End position at the normal position */
+    }
+  }
