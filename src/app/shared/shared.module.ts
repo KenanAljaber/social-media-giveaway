@@ -1,5 +1,6 @@
 import {NgModule} from "@angular/core";
 import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -9,9 +10,13 @@ import { FooterComponent } from './components/footer/footer.component';
     ],
     providers:[],
     declarations: [
-      FooterComponent
+      FooterComponent,
+      NavbarComponent
     ],
-    exports:[FooterComponent]
+    exports:[
+      FooterComponent,
+      NavbarComponent,
+    ]
 
 })
 export class SharedModule{};
