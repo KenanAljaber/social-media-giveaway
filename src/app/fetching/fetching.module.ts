@@ -6,6 +6,7 @@ import {HttpClientModule} from "@angular/common/http"
 import { PostFetcherService } from "./services/postfetcher.service";
 import { DesktopHeroSectionComponent } from './components/desktop-hero-section/desktop-hero-section.component';
 import { SearchPostWidgetComponent } from './components/search-post-widget/search-post-widget.component';
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { SearchPostWidgetComponent } from './components/search-post-widget/searc
     imports: [
         FormsModule,
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
+        SharedModule
     ],
     providers: [PostFetcherService],
     exports: [HomePageComponent]
