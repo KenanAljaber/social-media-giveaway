@@ -1,0 +1,41 @@
+.main{
+    position: fixed;
+    z-index: 201;
+    width: 300px;
+    min-height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    left: 2%;
+    height: 25px;
+    top: 75px;
+    animation: _ngcontent-ng-c2429719831_slide-down linear 0.5s;
+    display: flex;
+    align-items: center;
+    .text{
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        p{
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+
+}
+
+@keyframes slide-down {
+    from{
+        top: -100px;
+        opacity: 0;
+    }
+    to{
+        top:75px;
+        opacity: 1;
+    }
+    
+}
