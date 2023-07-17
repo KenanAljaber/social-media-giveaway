@@ -2,6 +2,13 @@
     width: 100wh;
     background-color: var(--accent-dark-color);
     padding: 15px;
+    display: flex;
+
+    .text{
+            text-align: start;
+    width: 100%;
+    color: white;
+    }
     .icons{
         color: white;
         display: inline-flex;
