@@ -11,16 +11,16 @@ import { ShowWarningService } from '../../services/show-warning.service';
 })
 export class PopupMessageComponent implements OnInit {
 
-  // messageType = CONSTANTS.MessageTypes;
+  
+   text: string = ''; // the message text 
+   type: MessageTypes = MessageTypes.SUCCESS; // type of the message
 
-   text: string = '';
-   type: MessageTypes = MessageTypes.SUCCESS;
+  show:boolean=false; // flag to indicate whether showing the message or not
 
-  show:boolean=false;
-
-  theme: { bgColor: string, txtColor: string } = { bgColor: '', txtColor: '' };
+  theme: { bgColor: string, txtColor: string } = { bgColor: '', txtColor: '' }; // the theme that will be applied to the message container
 
   constructor(private showWarningService:ShowWarningService){
+    //subscribe to the ShowWarningService so we can show message each time it is needed
       showWarningService.showWarning$.subscribe(message =>{
         if(message.show){
           this.showWarning(message.type,message.message);
@@ -32,6 +32,9 @@ export class PopupMessageComponent implements OnInit {
     this.setTheme();
   }
 
+  /**
+   * set the theme according to the type
+   */
   private setTheme():void {
     switch (this.type) {
       case MessageTypes.SUCCESS:
@@ -47,9 +50,12 @@ export class PopupMessageComponent implements OnInit {
 
   }
 
+  /**
+   * show the warning message for 3 seconds and then disappear it
+   * @param pType the message type
+   * @param pText the message text
+   */
   private showWarning(pType:MessageTypes,pText:string):void{
-
-
     this.type=pType;
     this.text=pText;
     this.setTheme();

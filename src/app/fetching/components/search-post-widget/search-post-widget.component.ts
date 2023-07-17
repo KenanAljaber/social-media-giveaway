@@ -11,16 +11,21 @@ import { MessageTypes } from 'src/app/shared/constants/CONSTANTS';
 })
 export class SearchPostWidgetComponent {
 
-  postURL:string='';
-  resp:string='';
+  
+  postURL:string=''; // the post url that the user will type
+  resp:string=''; //for debugging purpose
 
-  comments:Comment[]=[];
+  comments:Comment[]=[]; // the array of comments that we will get once we fetch the comments
 
   constructor(
     private postFetcherService:PostFetcherService,
     private warningService:ShowWarningService
       ){}
 
+  /**
+   * validate the url of the post
+   * if it isa valid call the server to fetch the post's comments
+   */
    searchPost(){
     if(!this.postURL || this.postURL.trim().length==0 || !this.validatePostUrl(this.postURL)){
       this.warningService.showWarning({message:"Please enter a valid post url",type:MessageTypes.WARNING,show:true})
@@ -33,7 +38,13 @@ export class SearchPostWidgetComponent {
     })  
   }
 
+  /**
+   * validate the post url by using regular expressoin
+   * @param postUrl the post url
+   * @returns true or false whether the post url is valid or not
+   */
   validatePostUrl(postUrl:string):boolean{
+    //search for the following pattern: /p/xxxxxxx
         const regex:RegExp= /\/p\/([A-Za-z0-9_-]+)/;
         const match= postUrl.match(regex);
         if(match?.[1]){
