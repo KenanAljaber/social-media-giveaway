@@ -14,24 +14,7 @@
     /* Apply fade-in animation */
     margin-bottom: 50px;
 
-    .arrow {
-    position: absolute;
-    bottom: -43px;
-    font-weight: bolder;
-    left: 48.5%;
-    z-index: 20;
-    padding: 10px;
-    font-size: 3rem;
-    color: white;
-    text-shadow: 4px 3px 13px #0000007d;
-    transition: 0.5s;
-    }
-    .arrow:hover{
-        transform: scale(1.1);
-        color: var(--accent-color);
-      
-        cursor: pointer;
-    }
+
 
     .right {
         margin-top: 5%;
