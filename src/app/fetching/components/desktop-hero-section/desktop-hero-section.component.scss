@@ -3,30 +3,57 @@
     flex-direction: row;
     // width: 100%;
     // height: 100%;
-    overflow-x: hidden;
+    position: relative;
+    // overflow: hidden;
     padding: 40px;
-    background: linear-gradient(180deg, rgba(32,22,97,1) 0%, rgba(2,2,59,1) 35%, rgba(88, 28, 99, 0.696) 100%);
-    opacity: 0; /* Set initial opacity to 0 */
-    animation: fade-in 1s ease-out forwards; /* Apply fade-in animation */
-  
-    .right{
+    z-index: 10;
+    background: linear-gradient(180deg, rgba(32, 22, 97, 1) 0%, rgba(2, 2, 59, 1) 37%, rgba(88, 28, 99, 1) 85%, rgba(88, 28, 99, 0.331) 100%);
+    opacity: 0;
+    /* Set initial opacity to 0 */
+    animation: fade-in 1s ease-out forwards;
+    /* Apply fade-in animation */
+    margin-bottom: 50px;
+
+    .arrow {
+    position: absolute;
+    bottom: -43px;
+    font-weight: bolder;
+    left: 48.5%;
+    z-index: 20;
+    padding: 10px;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 4px 3px 13px #0000007d;
+    transition: 0.5s;
+    }
+    .arrow:hover{
+        transform: scale(1.1);
+        color: var(--accent-color);
+      
+        cursor: pointer;
+    }
+
+    .right {
         margin-top: 5%;
         margin-left: 4%;
         margin-right: 3%;
         width: 100%;
         color: white;
-        ul{
-            width:75%;
-            li{
+
+        ul {
+            width: 75%;
+
+            li {
                 font-size: 1.2rem;
                 font-weight: 500;
                 margin: 15px;
             }
         }
-        
-    
+
+
     }
-    .left{
+
+    .left {
         margin-top: 6%;
         margin-left: 5%;
         margin-right: 3%;
@@ -35,47 +62,54 @@
         flex-direction: column;
         align-items: flex-start;
 
-        .text{
-          
+        .text {
+
             width: 100%;
             // text-align: center;
             color: white;
-            .big-title{
+
+            .big-title {
                 font-size: 4rem;
                 width: 600px;
                 // text-align: center;
                 // margin: 0 auto;
                 margin-bottom: 0;
-                strong{
+
+                strong {
                     color: var(--accent-color);
                 }
             }
-            p{
+
+            p {
                 margin: 0;
                 font-weight: 200;
             }
         }
-    
-        .download{
+
+        .download {
             width: 100%;
             text-align: center;
             margin-top: 25px;
-            img{
+
+            img {
                 width: 200px;
                 transition: 0.5s;
                 margin-bottom: 0;
             }
-            img:hover{
+
+            img:hover {
                 transform: scale(1.1);
                 cursor: pointer;
             }
-            h4{
-                margin:0;
-                color:  white;
+
+            h4 {
+                margin: 0;
+                color: white;
                 font-weight: 300;
                 transition: 0.5s;
             }
-            h4:hover{
+
+            h4:hover {
                 transform: scale(1.1);
                 cursor: pointer;
                 font-weight: 700;
@@ -87,11 +121,24 @@
 
 @keyframes fade-in {
     0% {
-      opacity: 0;
-      transform: translateY(-200px); /* Start position below the bottom */
+        opacity: 0;
+        transform: translateY(-200px);
+        /* Start position below the bottom */
     }
+
     100% {
-      opacity: 1;
-      transform: translateY(0); /* End position at the normal position */
+        opacity: 1;
+        transform: translateY(0);
+        /* End position at the normal position */
     }
-  }
+}
+// .main::after {
+//     content: '';
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 2px;
+//     background-color: #ffffff; /* Set your desired color for the bottom border */
+//     z-index: 10;
+//   }
