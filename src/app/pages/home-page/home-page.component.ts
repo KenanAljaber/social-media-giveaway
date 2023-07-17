@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PostFetcherService } from '../../services/postfetcher.service';
-import { Comment } from '../../types/comment.interface';
+import { PostFetcherService } from '../../fetching/services/postfetcher.service';
+import { Comment } from '../../fetching/types/comment.interface';
 
 @Component({
   selector: 'fetching-home-page',
