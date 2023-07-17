@@ -1,31 +1,61 @@
+.hamburger{
+    color: white;
+    font-size: 1.4rem;
+    position: absolute;
+    z-index: 300;
+    left: 20px;
+    top: 27px;
+    transition: 1s;
+}
+.hamburger:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
 .main {
     display: flex;
     width: 100%;
-    // position: fixed;
-    // top: 0;
+    left: 0;
+    position: absolute;
     background: var(--accent-color);
     z-index: 200;
-
-    .items-list {
-        display: flex;
-        flex-direction: row-reverse;
-        color: white;
-        align-items: center;
-        content: reverse;
-        width: 100%;
-        margin-right: 2%;
-        gap: 40px;
-        text-decoration: none;
-        list-style-type: none;
-        justify-content: center;
-
-        li {
-            transition: 0.5s;
-        }
-
-        li:hover {
-            cursor: pointer;
-            transform: scale(1.1);
-        }
+    animation: slide-left linear 1s;
+    transition: 1s;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .items-list {
+    display: flex;
+    flex-direction: row-reverse;
+    color: white;
+    align-items: center;
+    content: reverse;
+    width: 100%;
+    margin-right: 2%;
+    gap: 40px;
+    text-decoration: none;
+    list-style-type: none;
+    justify-content: center;
+  
+    li {
+      transition: 0.5s;
     }
-}
+  
+    li:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes slide-left {
+    from {
+      left: -500px;
+      opacity: 0;
+    }
+    to {
+      left: 0px;
+      opacity: 1;
+    }
+  }
+
+  

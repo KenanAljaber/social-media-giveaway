@@ -1,6 +1,14 @@
-<div class="main">
+<div class="hamburger" *ngIf="!isDesktop" (click)="toggleNavBar()"
+    [style.left]="isNavbarVisible? '150px' : '20px'">
+    <i class="pi pi-bars"></i>
+</div>
+<div class="main" [style.width]="isDesktop? '100%' : '200px'"
+    [style.left]="isNavbarVisible ? '0' : isDesktop ? '0' : '-250px'"    
+#main>
+    <ul class="items-list" [style.height]="isDesktop ? 'auto' : '100vh' "
+        [style.flexDirection]="isDesktop ? 'row' : 'column'" [style.align-items]="isDesktop ? 'center' : 'flex-start'"
+        [style.justify-content]="isDesktop ? 'center' : 'unset'" [style.margin-top]="isDesktop ? 'unset' : '60px'">
 
-    <ul class="items-list">
         <li>Home</li>
         <li>Fetch comments</li>
         <li>Download</li>

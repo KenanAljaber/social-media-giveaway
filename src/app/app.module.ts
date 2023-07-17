@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FetchingModule } from './fetching/fetching.module';
 import { SharedModule } from './shared/shared.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ShowWarningService } from './shared/services/show-warning.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     
   ],
   providers: [
-
+    ShowWarningService
 
   ],
   bootstrap: [AppComponent]

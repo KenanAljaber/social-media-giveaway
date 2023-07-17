@@ -13,8 +13,8 @@
             <h4>Download for Free!</h4>
         </div>
     </div>
-    <hr>
-    <div class="right">
+    <hr *ngIf="isDesktop">
+    <div class="right" *ngIf="isDesktop">
         <article>
             <h2>Key Features:</h2>
             <ul>
