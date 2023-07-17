@@ -1,12 +1,13 @@
 <div class="main">
+    <h1 class="title">Enter your post link</h1>
     <div class="search-widget">
-        <input type="text" [(ngModel)]="postURL">
-        <button (click)="searchPost()">Search post</button>
-        {{postURL | json}}
-        {{resp | json}}
+        <input class="link-input" type="text" [(ngModel)]="postURL" placeholder="https://www.instagram.com/p/CuknagMyW0A/">
+        <button class="link-search-btn" (click)="searchPost()">Search post</button>
+        <!-- {{postURL | json}}
+        {{resp | json}} -->
     </div>
 
-    <div class="comments" *ngIf="comments && comments.length>0">
+    <!-- <div class="comments" *ngIf="comments && comments.length>0">
         <div class="comment" *ngFor="let comment of comments">
             <div class="comment-row">
                 <div class="user">
@@ -17,4 +18,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
