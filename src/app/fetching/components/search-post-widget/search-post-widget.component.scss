@@ -1,8 +1,7 @@
 .main {
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 
     .title{
         color: white;
@@ -113,6 +112,13 @@
                 }
 
             }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .main{
+        .title{
+            font-size: 2rem;
         }
     }
 }

@@ -1,4 +1,4 @@
-import { Component, HostListener, AfterViewInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { Component, HostListener, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'shared-navbar',
@@ -9,7 +9,6 @@ export class NavbarComponent implements AfterViewInit {
 
   isNavbarVisible:boolean=false;
 
-  @ViewChild('main') mainDev:ElementRef|null=null;
 
   mobileSize:number=990;
   isDesktop:boolean;
@@ -18,7 +17,7 @@ export class NavbarComponent implements AfterViewInit {
   onResize(event:any) {
     this.isDesktop = event.target.innerWidth > this.mobileSize;
   }
-  constructor(private renderer:Renderer2){
+  constructor(){
     this.isDesktop=window.innerWidth > this.mobileSize;
     
   }
@@ -29,18 +28,7 @@ export class NavbarComponent implements AfterViewInit {
 
   toggleNavBar(){
     this.isNavbarVisible=!this.isNavbarVisible;
+  }
 
-    if(this.isNavbarVisible){
-     this.showNavbar();
-     return; 
-    }
-    this.hideNavbar();
-  }
-  hideNavbar() {
-  
-  }
-  showNavbar() {
- 
-  }
 
 }
