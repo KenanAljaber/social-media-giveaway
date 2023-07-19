@@ -1,17 +1,19 @@
+<div class="main" 
+[style.width]="isDesktop? '100%' : '200px'"
+[style.position]="isDesktop? 'inherit' : 'fixed'"
+[style.left]="isNavbarVisible ? '0' : isDesktop ? '0' : '-250px'"    
+#main>
 <div class="hamburger" *ngIf="!isDesktop" (click)="toggleNavBar()"
     [style.left]="isNavbarVisible? '150px' : '20px'">
     <i class="pi pi-bars"></i>
 </div>
-<div class="main" [style.width]="isDesktop? '100%' : '200px'"
-    [style.left]="isNavbarVisible ? '0' : isDesktop ? '0' : '-250px'"    
-#main>
-    <ul class="items-list" [style.height]="isDesktop ? 'auto' : '100vh' "
+    <ul class="items-list" [style.height]="isDesktop ? 'auto' : '100%' "
         [style.flexDirection]="isDesktop ? 'row' : 'column'" [style.align-items]="isDesktop ? 'center' : 'flex-start'"
         [style.justify-content]="isDesktop ? 'center' : 'unset'" [style.margin-top]="isDesktop ? 'unset' : '60px'">
 
-        <li>Home</li>
-        <li>Fetch comments</li>
-        <li>Download</li>
-        <li>Contact us</li>
+        <li (click)="goToHome()">Home</li>
+        <!-- <li (click)="goToHome()">Fetch comments</li> -->
+        <li (click)="goToHome()">Download</li>
+        <li (click)="goToHome()">Contact us</li>
     </ul>
 </div>

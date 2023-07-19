@@ -1,4 +1,5 @@
 import { Component, HostListener, AfterViewInit } from '@angular/core';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'shared-navbar',
@@ -17,7 +18,7 @@ export class NavbarComponent implements AfterViewInit {
   onResize(event:any) {
     this.isDesktop = event.target.innerWidth > this.mobileSize;
   }
-  constructor(){
+  constructor(private router:Router){
     this.isDesktop=window.innerWidth > this.mobileSize;
     
   }
@@ -28,6 +29,10 @@ export class NavbarComponent implements AfterViewInit {
 
   toggleNavBar(){
     this.isNavbarVisible=!this.isNavbarVisible;
+  }
+
+  goToHome(){
+    this.router.navigate(['/'])
   }
 
 
