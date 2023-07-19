@@ -1,0 +1,41 @@
+<h1 *ngIf="!isPickingWinners">Winners Conditions</h1>
+<div class="main" *ngIf="!isPickingWinners">
+    <div class="grid">
+            <div class="left">
+                <p>Number of Winners</p>
+                <input (blur)="onWinnersInputBlur($event)"
+                [(ngModel)]="winners"
+                placeholder="1"
+                [value]="winners" class="number-input" type="number" max="30" [maxLength]="2">
+                <small>max {{maxWinners}}</small>
+            </div>
+            <div class="right">
+                <p>Number of Minimum Mention</p>
+                <div class="input-mention">
+                    <button class="decrement" (click)="decrementMention()">-</button>
+                    <input
+                    disabled
+                    [value]="mentions"
+                     class="number-input" type="number">
+                    <button class="increment" (click)="incrementMention()">+</button>
+                </div>
+                <small>max {{maxMentions}}</small>
+            </div>
+            <div class="left">
+                <p>Prize Title</p>
+                <input
+                class="prize-input"
+                [(ngModel)]="prize"
+                placeholder="iPhone 12 Pro Max"
+                type="text">
+            </div>
+
+    </div>
+    <button class="winner-picker-btn"
+    (click)="pickWinners()"
+    >Pick the Winner!</button>
+</div>
+<div class="pbar" *ngIf="isPickingWinners">
+    <h1>Searching for lucky people</h1>
+    <clr-progress-bar clrMax="100" [clrValue]="progress" clrLabeled="true"></clr-progress-bar>
+</div>
